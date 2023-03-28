@@ -8,7 +8,7 @@ let age = 40;
 age = 30;
 // 2) Function
 //we can define what type of argument that should be passed in the function
-const circle = (diameter) => {
+const circle = (diameter:number) => {
     return diameter * Math.PI;
 };
 //Now we cannot call the function like circle("helo") which we can do in js, now we should pass number as a parameter otherwise it will throw error
