@@ -102,3 +102,32 @@ const def = (a, b, c = "user didn't pass this argument") => {
     console.log(`${a}, ${b}, ${c}`);
 };
 def(1, 3);
+const minus = (a, b) => {
+    //:number after the parameters states that the return type will be number
+    return a + b;
+};
+let result = minus(10, 3); //results type will be the return type of minus function
+const userDetails = (id, details) => {
+    console.log(`${id} is id , ${details.name} is name and ${details.roll} is roll number`);
+};
+userDetails(1, { name: "Sanskar", roll: 11 });
+//Function Signatures
+//
+//eg 1
+let details; //function which doesn't return anything
+details = (name, roll) => {
+    console.log(name, roll);
+};
+details("sanskar", "22");
+//eg 2
+let calc;
+calc = (firstNumber, secondNumber) => {
+    return firstNumber + secondNumber;
+};
+console.log(calc(1, 2));
+//eg 3
+let userDetailss;
+userDetailss = (detail) => {
+    console.log(`${detail.name}is name and ${detail.age} is age`);
+};
+userDetailss({ name: "Sanskar", age: 22 });

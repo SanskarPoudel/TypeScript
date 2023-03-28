@@ -154,3 +154,58 @@ const def = (
 };
 
 def(1, 3);
+
+const minus = (a: number, b: number): number => {
+  //:number after the parameters states that the return type will be number
+  return a + b;
+};
+
+let result = minus(10, 3); //results type will be the return type of minus function
+
+//Type Aliases
+type StringOrNum = string | number;
+
+type objectWithName = {
+  //we can use type of obj to be  objectWithName in order to make the object to be exactly look like this
+  name: string;
+  roll: number;
+};
+
+const userDetails = (id: StringOrNum, details: objectWithName) => {
+  console.log(
+    `${id} is id , ${details.name} is name and ${details.roll} is roll number`
+  );
+};
+
+userDetails(1, { name: "Sanskar", roll: 11 });
+
+//Function Signatures
+
+//
+
+//eg 1
+
+let details: (a: string, b: string) => void; //function which doesn't return anything
+
+details = (name: string, roll: string) => {
+  console.log(name, roll);
+};
+
+details("sanskar", "22");
+
+//eg 2
+let calc: (a: number, b: number) => number;
+
+calc = (firstNumber: number, secondNumber: number) => {
+  return firstNumber + secondNumber;
+};
+
+console.log(calc(1, 2));
+
+//eg 3
+let userDetailss: (obj: { name: string; age: number }) => void;
+userDetailss = (detail: { name: string; age: number }) => {
+  console.log(`${detail.name}is name and ${detail.age} is age`);
+};
+
+userDetailss({ name: "Sanskar", age: 22 });
